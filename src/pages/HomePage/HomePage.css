@@ -1,0 +1,28 @@
+.layout {
+    background-color: #efdbff;
+}
+
+.logo {
+    /* margin: 1rem;
+    padding: 1rem; */
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-left: 2rem;
+    margin-right: 3rem;
+}
+
+/* .layout-header {
+    border-radius: 5px;
+    margin-right: 5rem;
+    margin-left: 5rem;
+} */
+
+#header-menu-section-1 {
+    display: inline-flexbox;
+    align-items: center;
+}
+
+#header-menu-button {
+    margin-right: 1rem;
+    font-size: large;
+}
