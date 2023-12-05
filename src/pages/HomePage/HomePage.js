@@ -2,6 +2,7 @@ import { Button, Flex, Layout, Space } from "antd";
 import { ConfigProvider } from "antd";
 
 import "./HomePage.css";
+import { useNavigate } from "react-router-dom";
 
 const { Header } = Layout;
 
@@ -21,6 +22,8 @@ const HeaderMenu = [
 ];
 
 const HomePage = () => {
+
+  const navigate = useNavigate();
   return (
     <ConfigProvider
       theme={{
@@ -50,7 +53,7 @@ const HomePage = () => {
                 })}
               </Flex>
               <Flex align="flex-end">
-                <Button type="primary">Sign Up</Button>
+                <Button type="primary" onClick={() => navigate("/login")}>Sign Up</Button>
               </Flex>
             </Flex>
           </Space>
