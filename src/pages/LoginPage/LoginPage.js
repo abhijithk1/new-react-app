@@ -1,17 +1,17 @@
 import { Avatar, Button, Flex, Input } from "antd";
-import { UserOutlined } from "@ant-design/icons";
+import { LockOutlined } from "@ant-design/icons";
 import { Typography } from "antd";
-
-import "./LoginPage.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const { Title, Text } = Typography;
 
 const LoginPage = () => {
+  const [loading, setLoading] = useState(false);
+  const [email, setEmail] = useState("");
+  const [pass, setPass] = useState("");
   const navigate = useNavigate();
 
-  const [loading, setLoading] = useState(false)
 
   const loginHandler = () => {
     setLoading(true);
@@ -20,20 +20,20 @@ const LoginPage = () => {
   }
 
   return (
-    <Flex id="box-section" align="center" gap={"middle"} vertical>
+    <Flex id="login-section" align="center" justify="center" gap={"middle"} vertical style={{margin: 80}}>
       <Avatar
         style={{ backgroundColor: "#722ed1" }}
-        icon={<UserOutlined />}
+        icon={<LockOutlined />}
         size={"large"}
       />
-      <Title level={3}>Login Page</Title>
-      <Flex id="login-form" justify="center" gap={"large"} vertical>
-        <Input size="large" placeholder="username" />
-        <Input size="large" placeholder="password" type="password" />
+      <Title level={3}>Login</Title>
+      <Flex id="login-form" gap={"large"} vertical style={{width: '25%'}}>
+        <Input size="large" placeholder="Enter your Email" value={email} onChange={(e) => {setEmail(e.target.value);}}/>
+        <Input.Password size="large" placeholder="Enter your Password" value={pass} onChange={(e) => {setPass(e.target.value);}}/>
         <Button size="large" block type="primary" loading={loading} onClick={loginHandler}>
           Login
         </Button>
-        <Flex align="start" gap={"large"}>
+        <Flex justify="space-between" gap={"large"}>
           <Text underline italic>
             forgot password?
           </Text>
